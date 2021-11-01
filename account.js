@@ -11,9 +11,9 @@ const pinNumber = 1234;
 
 
 
-module.export = {
-    balance: accountBalance,
-    pin: pinNumber,
+module.exports = {
+    accountBalance: accountBalance,
+    pinNumber: pinNumber,
 };
 
 

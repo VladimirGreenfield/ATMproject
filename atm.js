@@ -1,11 +1,9 @@
 "use strict";
 //TODO: Import necessary values from account.js
-const prompt = require('prompt-sync')();
 
-
-const {balance, pin} = require("./account");
-console.log(balance);
-console.log(pin);
+const {accountBalance, pinNumber} = require("./account");
+console.log(accountBalance);
+console.log(pinNumber);
 
 
 function getBalance() {
@@ -39,6 +37,23 @@ function validatePin(enteredPin) {
   //Allow access to ATM if matching
   //Return value should be a Boolean (true or false)
   //In English: if the PIN entered is correct, return True. Otherwise, return False.
+  let userInput = prompt("please enter your pin:")
+  let yourPin = Number(userInput);
+  yourPin = true
+  if(yourPin === pin) {
+    console.log("Welcome to your account");
+  } else {
+    prompt("Error. Please try again.");
+  }
+  return yourPin;
 }
+
+module.export = {
+  yourBalance: getBalance,
+  yourWithdraw: withdraw,
+  yourDeposit: deposit,
+  pinValidaion: validatePin,
+
+};
 
 //TODO: Export these functions
