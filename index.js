@@ -20,6 +20,7 @@ function accessATM() {
   //Proceed to main menu ONLY if they matchnpm start
 }
 
+accessATM()
 
 
 
@@ -29,15 +30,15 @@ function mainMenu() {
   //TODO: Set up a main menu.  Prompt users for ATM selection to do the following:
   let choice = Number(prompt("Select a number of what you would like to display 1.) Balance 2.) Deposit 3.) Withdrawal 4.) Restart 5.) Quit"));
   if(choice === 1) {
-    yourBalance;
+    yourBalance();
   } else if(choice === 2) {
-    deposit;
+    deposit();
   } else if(choice === 3) {
-    withdraw;
+    withdraw();
   } else if(choice === 4) {
-    return mainMenu();
+    mainMenu();
   } else if(choice === 5) {
-    mainMenu().close;
+    return;
   } else {
     console.log("Error");
   }
@@ -51,5 +52,5 @@ function mainMenu() {
 
 }
 
-mainMenu();
+
 //TODO: Call mainMenu function to start our app!

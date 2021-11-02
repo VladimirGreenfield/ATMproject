@@ -8,9 +8,7 @@ console.log(pinNumber);
 
 function getBalance() {
   //TODO: Return the customer's acct. balance
-  let customerAccountBalance = accountBalance;
-  console.log(customerAccountBalance);
-  return customerAccountBalance;
+  console.log("Your balance is: " + accountBalance);
 }
 
 
@@ -43,12 +41,14 @@ function validatePin(enteredPin) {
   //Allow access to ATM if matching
   //Return value should be a Boolean (true or false)
   //In English: if the PIN entered is correct, return True. Otherwise, return False.
- let enteredPin = Number(prompt("Enter your pin:"));
- if(enteredPin === pinNumber) {
-   return true;
+ let userInput = Number(prompt("Enter your pin:"));
+ pinNumber = true
+ if(userInput === pinNumber && true) {
+   return userInput;
  } else {
    return false;
  }
+  
 }
 
 module.exports = {
