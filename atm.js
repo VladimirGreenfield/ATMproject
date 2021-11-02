@@ -8,19 +8,24 @@ console.log(pinNumber);
 
 function getBalance() {
   //TODO: Return the customer's acct. balance
-  return balance;
+  let customerAccountBalance = accountBalance;
+  console.log(customerAccountBalance);
+  return customerAccountBalance;
 }
+
 
 
 function withdraw(withdrawAmount) {
   //TODO: withdraw amount from current acct. balance
   // Log the current balance after withdrawal is made
-  let num1 = balance;
+  let num1 = accountBalance;
   let userInput = prompt("Enter the ammount you would like to withdraw:");
   let num2 = Number(userInput);
   let newBalance = num1 - num2;
   console.log(newBalance);
+  return newBalance
 }
+
 
 function deposit(depositAmount) {
   //TODO: deposit amount to current acct. balance
@@ -30,6 +35,7 @@ function deposit(depositAmount) {
   let num2 = Number(userInput);
   let newBalance = num1 + num2;
   console.log(newBalance);
+  return newBalance;
 }
 
 function validatePin(enteredPin) {
@@ -37,22 +43,19 @@ function validatePin(enteredPin) {
   //Allow access to ATM if matching
   //Return value should be a Boolean (true or false)
   //In English: if the PIN entered is correct, return True. Otherwise, return False.
-  let userInput = prompt("please enter your pin:")
-  let yourPin = Number(userInput);
-  yourPin = true
-  if(yourPin === pin) {
-    console.log("Welcome to your account");
-  } else {
-    prompt("Error. Please try again.");
-  }
-  return yourPin;
+ let enteredPin = Number(prompt("Enter your pin:"));
+ if(enteredPin === pinNumber) {
+   return true;
+ } else {
+   return false;
+ }
 }
 
-module.export = {
-  yourBalance: getBalance,
-  yourWithdraw: withdraw,
-  yourDeposit: deposit,
-  pinValidaion: validatePin,
+module.exports = {
+  getBalance: getBalance,
+  withdraw: withdraw,
+  deposit: deposit,
+  validatePin: validatePin,
 
 };
 
